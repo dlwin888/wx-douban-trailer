@@ -1,6 +1,6 @@
 Page({
   data: {
-    imgUrl: '/assets/image/QRcode.jpg'
+    imgUrl: 'http://kan.027cgb.com/624176/QRcode.jpg'
   },
   saveQRCode () {
     const { imgUrl } = this.data
