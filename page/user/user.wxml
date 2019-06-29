@@ -16,7 +16,7 @@
 
   <view class="history-list" wx:if="{{movies.length}}">
 
-    <view class="movie-item" wx:for="{{movies}}" wx:key="{{item._id}}" bindtap="gotoDetail" data-movie-data="{{item}}">
+    <view class="movie-item" wx:for="{{movies}}" wx:key="{{item.id}}" bindtap="gotoDetail" data-movie-data="{{item}}">
       <image class="poster" mode="widthFix" lazy-load="true" src="{{item.images.small}}" />
       <view class="title">
         <text>{{item.title}} <text class="rate">{{item.rating.average}}</text></text>
