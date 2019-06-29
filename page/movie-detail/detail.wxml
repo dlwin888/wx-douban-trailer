@@ -1,14 +1,14 @@
 <view class="container">
-  <video style="width: 100%;" poster="{{movie.cover}}" src="{{movie.video}}" controls />
+  <video style="width: 100%;" poster="{{movie.images.small}}" src="{{movie.video}}" autoplay controls />
   <view class="movie-content">
     <view class="title">
       <text>{{movie.title}}</text>
     </view>
     <view class="type">
-      <text>{{movie.rate}}分 / {{movie.types}}</text>
+      <text>{{movie.rating.average}}分 / {{movie.genres}}</text>
     </view>
     <view class="pubdate">
-      上映时间: {{movie.pubdate}} ({{movie.country}})
+      上映时间: {{movie.pubdate}} ({{movie.countries[0]}})
     </view>
     <view class="summary">
       电影简介：<text>{{movie.summary}}</text>

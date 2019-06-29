@@ -30,8 +30,12 @@ Page({
     })
     wx.request({
       url: `${cfg.domain}/in_theaters?start=${page}&count=${size}`,
+      header: {
+        //这里修改json为text   json的话请求会返回400（bad request）
+        "Content-Type": "application/text"
+      },
       success: (res) => {
-        const { data } = res.data
+        const data = res.data.subjects
         const movies = this.data.movies || []
         
         for (let i=0; i<data.length; i+=2) {
@@ -56,12 +60,12 @@ Page({
 
   gotoDetail(e) {
     const { movieData } = e.currentTarget.dataset
-    const { _id } = movieData
+    const { id } = movieData
 
     this.saveData(movieData)
 
     wx.navigateTo({
-      url: '../movie-detail/detail?id=' + _id
+      url: '../movie-detail/detail?id=' + id
     })
   }
 })

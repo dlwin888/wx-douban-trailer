@@ -3,28 +3,32 @@ Page({
   data: {
     types: [
       {
-        name: '喜剧',
+        id: 'coming_soon',
+        name: '即将上映',
         img: '/assets/image/xiju.png'  
       },
       {
-        name: '动作',
+        id: 'top250',
+        name: 'Top250',
         img: '/assets/image/dongzuo.png'
       },
       {
-        name: '科幻',
+        id: 'weekly',
+        name: '口碑榜',
         img: '/assets/image/kehuan.png'
       },
       {
-        name: '爱情',
+        id: 'us_box',
+        name: '北美票房榜',
         img: '/assets/image/aiqing.png'
       },
       {
-        name: '动画',
+        id: 'new_movies',
+        name: '新片榜',
         img: '/assets/image/donghua.png'
       }
     ]
   },
-
   tapTypeHandle(e) {
     const name = e.currentTarget.dataset.type
     wx.navigateTo({

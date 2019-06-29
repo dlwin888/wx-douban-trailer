@@ -53,10 +53,10 @@ Page({
 
   gotoDetail(e) {
     const { movieData } = e.currentTarget.dataset
-    const { _id } = movieData
+    const { id } = movieData
 
     wx.navigateTo({
-      url: '../movie-detail/detail?id=' + _id
+      url: '../movie-detail/detail?id=' + id
     })
   }
 })

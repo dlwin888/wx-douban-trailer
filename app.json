@@ -38,5 +38,6 @@
         "selectedIconPath": "assets/image/user-active.png"
       }
     ]
-  }
+  },
+  "sitemapLocation": "sitemap.json"
 }

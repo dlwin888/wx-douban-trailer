@@ -4,7 +4,7 @@ Page({
   data: {
     movies: [],
     page: 1,
-    size: 6,
+    size: 50,
     loading: true,
     type: ''
   },
@@ -41,13 +41,22 @@ Page({
     })
 
     wx.request({
-      url: `${cfg.domain}/in_theaters?type=${type}&start=${page}&count=${size}`,
+      url: `${cfg.domain}/${type}?start=${page}&count=${size}`,
+      header: {
+        //这里修改json为text   json的话请求会返回400（bad request）
+        "Content-Type": "application/text"
+      },
       success: (res) => {
-        const { data } = res.data
+        const data = res.data.subjects
         const movies = this.data.movies || []
 
         for (let i = 0; i < data.length; i += 2) {
-          movies.push([data[i], data[i + 1] ? data[i + 1] : null])
+          if (data[0].rank){
+            movies.push([data[i].subject, data[i + 1] ? data[i + 1].subject : null])
+          }
+          else {
+            movies.push([data[i], data[i + 1] ? data[i + 1] : null])
+          }
         }
 
         this.setData({
@@ -70,12 +79,12 @@ Page({
 
   gotoDetail(e) {
     const { movieData } = e.currentTarget.dataset
-    const { _id } = movieData
+    const { id } = movieData
 
     this.saveData(movieData)
 
     wx.navigateTo({
-      url: '../movie-detail/detail?id=' + _id
+      url: '../movie-detail/detail?id=' + id
     })
   }
 })
