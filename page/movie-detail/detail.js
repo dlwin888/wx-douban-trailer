@@ -13,7 +13,7 @@ Page({
     })
 
     wx.request({
-      url: `${cfg.domain}/detail/${id}`,
+      url: `${cfg.domain}/subject/${id}`,
       success: (res) => {
         const movie = res.data.data
         this.setData({

@@ -1,3 +1,3 @@
 export default {
-  domain: 'https://db.miaov.com/doubanapi/v0/movie'
+  domain: 'https://douban.uieee.com/v2/movie'
 }

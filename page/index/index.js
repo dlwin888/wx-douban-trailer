@@ -29,7 +29,7 @@ Page({
       loading: true
     })
     wx.request({
-      url: `${cfg.domain}/list?page=${page}&size=${size}`,
+      url: `${cfg.domain}/in_theaters?start=${page}&count=${size}`,
       success: (res) => {
         const { data } = res.data
         const movies = this.data.movies || []
