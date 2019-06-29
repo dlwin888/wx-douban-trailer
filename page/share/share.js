@@ -1,6 +1,6 @@
 Page({
   data: {
-    imgUrl: '/assets/image/QRcode.png'
+    imgUrl: '/assets/image/QRcode.jpg'
   },
   saveQRCode () {
     const { imgUrl } = this.data
