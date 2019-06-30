@@ -44,9 +44,9 @@ Page({
   },
 
   scrollHandler () {
-    const { page } = this.data
+    const { page, size} = this.data
     this.setData({
-      page: page + 1
+      page: page + size
     })
     this.loadMovies()
   },
